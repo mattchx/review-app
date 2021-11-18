@@ -1,8 +1,8 @@
-import React, { useState } from 'react'
-// import { StyleSheet, Text, View, Alert, Button, TextInput } from 'react-native';
+import * as React from 'react'
 import { useFonts } from 'expo-font'
-// import { AppLoading } from 'expo'
-import Home from './screens/home'
+import { NavigationContainer } from '@react-navigation/native'
+
+import Drawer from './routes/drawer'
 
 export default function App() {
   const [loaded] = useFonts({
@@ -13,14 +13,9 @@ export default function App() {
   if (!loaded) {
     return null
   }
-  return <Home />
+  return (
+    <NavigationContainer>
+      <Drawer />
+    </NavigationContainer>
+  )
 }
-
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     backgroundColor: '#fff',
-//     alignItems: 'center',
-//     justifyContent: 'center',
-//   },
-// });
