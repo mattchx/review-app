@@ -6,22 +6,10 @@ import ReviewDetails from '../screens/reviewDetails'
 
 const Stack = createStackNavigator()
 
-const options = {
-  all: {
-    headerTintColor: 'black',
-    headerStyle: { backgroundColor: 'ivory', height: 80 },
-  },
-  home: {
-    title: 'Game Zone',
-    headerTintColor: 'ivory',
-    headerStyle: { backgroundColor: 'cornflowerblue', height: 60 },
-  },
-}
-
 function HomeStack() {
   return (
-    <Stack.Navigator screenOptions={options.all}>
-      <Stack.Screen name='Home' component={Home} options={options.home} />
+    <Stack.Navigator>
+      <Stack.Screen name='Home' component={Home} />
       <Stack.Screen
         name='ReviewDetails'
         component={ReviewDetails}
